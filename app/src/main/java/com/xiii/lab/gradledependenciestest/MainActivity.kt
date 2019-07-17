@@ -1,9 +1,14 @@
 package com.xiii.lab.gradledependenciestest
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.xiii.lab.domain.TestRepository
+import dagger.android.DaggerActivity
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerActivity() {
+
+    @Inject
+    lateinit var repository: TestRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
